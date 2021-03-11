@@ -35,4 +35,35 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+  
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'B', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'U', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'B', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'B', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'L', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'E', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'BUBBLE')
+
+    assert.isTrue(result);
+  });
+  it("should return true if the matrix array has empty arrays in it", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'B', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'U', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'B', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'B', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'L', 'E', 'R', 'L'],
+      [],
+      [],
+      ['O', 'D', 'C', 'A', 'E', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'BUBBLE')
+
+    assert.isTrue(result);
+  });
 });
